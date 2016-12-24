@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WavizApplication {
+public class MainApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WavizApplication.class, args);
+		SpringApplication.run(MainApplication.class, args);
 	}
 }
