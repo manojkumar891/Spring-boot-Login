@@ -21,6 +21,8 @@ public class MainServiceImpl implements MainService{
 
 	@Override
 	public Main verify(Main main) {
+		/* if have store encrypted password 
+		 then should write a code for decrypt then verify user */
 		return this.mainRepository.verify(main);
 	}
 	

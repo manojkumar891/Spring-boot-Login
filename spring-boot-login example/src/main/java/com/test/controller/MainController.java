@@ -21,8 +21,14 @@ public class MainController {
 	
 
 	@RequestMapping(value="/verify-login",method=RequestMethod.POST)
-	public Main verify(@RequestBody Main main){
-		return mainService.verify(main);
+	public Boolean verify(@RequestBody Main main){
+		Main dbMain = this.mainService.verify(main);
+		if(dbMain != null){
+			return true;
+		}
+		
+		return false;
+		
 	}
 	
 }
