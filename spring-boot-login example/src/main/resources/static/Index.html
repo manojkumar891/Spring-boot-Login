@@ -18,10 +18,12 @@
 	<script type="text/javascript">
 	
 	var app = angular.module('myApp', []);
-	app.controller('mainController', function($scope) {
+	app.controller('mainController', function($scope,$http) {
 	    
 		$scope.login = function(user){
-			alert(JSON.stringify(user));
+			$http.post('/verify-login',user).then(function(result){
+				alert("home");
+			});
 		}
 		
 	});
