@@ -1,36 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<script src="app.js"></script>
+<script src="controller/mainController.js"></script>
 </head>
-<body ng-app="myApp" method="post">
-	<div ng-controller="mainController">
-		
-	<form ng-submit="login(user)">	
-	<input type="text" ng-model="user.email"/>
-	<input type="text" ng-model="user.password"/>
-	<button type="submit">Login</button>
-	</form>
-	</div>
-	
-	<script type="text/javascript">
-	
-	var app = angular.module('myApp', []);
-	app.controller('mainController', function($scope,$http) {
-	    
-		$scope.login = function(user){
-			$http.post('/verify-login',user).then(function(result){
-				alert("home");
-			});
-		}
-		
-	});
-	
-	
-	</script>
-	
-	
+
+<body>
+	<!-- <div ng-view></div> -->
+	<div ui-view></div>
 </body>
+
 </html>
