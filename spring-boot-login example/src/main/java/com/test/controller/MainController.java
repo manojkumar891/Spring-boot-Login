@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.test.model.Main;
@@ -21,13 +22,13 @@ public class MainController {
 	
 
 	@RequestMapping(value="/verify-login",method=RequestMethod.POST)
-	public Main verify(@RequestBody Main main){
+	public @ResponseBody Main verify(@RequestBody Main main){
 		Main dbMain = this.mainService.verify(main);
 		if(dbMain != null){
 			return dbMain;
 		}
 		
-		return dbMain;
+		return main;
 		
 	}
 	
